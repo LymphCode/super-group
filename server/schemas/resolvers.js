@@ -1,4 +1,4 @@
-const { User } = reaquire('./models')
+const { User } = require('./models')
 
 const resolvers = {
     Mutation: {

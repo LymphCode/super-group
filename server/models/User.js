@@ -1,7 +1,5 @@
 const {Schema, model, SchemaTypes} = require('mongoose')
 const bcrypt = require('bcrypt');
-const { schema } = require('../../../../notes/react/react_playground_uofm/server/models/Todo');
-
 const userSchema = new schema({
     email: {
         type: String,
