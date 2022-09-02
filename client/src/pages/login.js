@@ -12,18 +12,18 @@ function Login() {
   }
 
   const renderPage = (
-    <div className='form'>
+    <div className='form loginCard'>
       <form>
         <div className='input-container'>
-          <label>Email</label>
+          <label>Email: </label>
           <input type="text" name='email' required />
         </div>
         <div className='input-container'>
-          <label>Password</label>
+          <label>Password: </label>
           <input type='password' name='pass' required />
         </div>
         <div className='button-container'>
-          <button type='submit'>Submit</button>
+          <button className='subBTN' type='submit'>Submit</button>
         </div>
       </form>
     </div>
