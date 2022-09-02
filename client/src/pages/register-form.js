@@ -25,7 +25,7 @@ export default class Register extends React.Component {
             onchange={e => this.onChange(e)}/>
           <input
             name= 'email'
-            placeholder='Please enter your email address'
+            placeholder='Enter your email address'
             type= 'email'
             value= {e => this.onChange(e)}/>
           <input

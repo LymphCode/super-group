@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import ReactDOM from 'react';
 
-function App() {
-  const [errorMessages, setErrorMessages] = useSate({});
+function Login() {
+  const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const renderErrMessage = (name) => {
@@ -32,4 +32,8 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
   }
+
+  return renderPage
 }
+
+export default Login
