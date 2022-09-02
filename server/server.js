@@ -4,7 +4,10 @@ const { typedefs, resolvers } = require('./schemas');
 const { ApolloServer } = require('apollo-server-express');
 const db = require('./config/connection');
 const PORT = process.env.PORT || 3333;
-
+var fs = require('fs');
+var mongoose = require('mongoose');
+var Schema = mongoose.Schema;
+var multer = require('multer');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'client/build')));
