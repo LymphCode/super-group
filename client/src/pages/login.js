@@ -2,18 +2,14 @@ import { useState } from 'react';
 import ReactDOM from 'react';
 
 function Login() {
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
-
-  const renderErrMessage = (name) => {
-    name === errorMessages.name && (
-      <div className='error'>{errorMessages.message}</div>
-    );
+  const handleSubmit = (event) => {
+    event.preventDefault();
   }
 
   const renderPage = (
-    <div className='form'>
-      <form>
+    <div>
+      <h1>Login</h1>
+      <form onSubmit={handleSubmit}>
         <div className='input-container'>
           <label>Email</label>
           <input type="text" name='email' required />
@@ -28,10 +24,6 @@ function Login() {
       </form>
     </div>
   );
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  }
 
   return renderPage
 }
