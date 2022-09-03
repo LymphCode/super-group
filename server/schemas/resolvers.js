@@ -1,7 +1,6 @@
 const { User } = require('./')
 const { signToken } = require('../auth');
 const { ApolloError } = require('apollo-server-express');
-const { default: App } = require('../../../../../notes/react/react_playground_uofm/client/src/App');
 
 const resolvers = {
     Mutation: {
