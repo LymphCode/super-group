@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Home() {
   const renderHome = (
-    <div class='Wrapper'>
+    <div className='Wrapper'>
       <h1>PlaceHolder Title</h1>
       <ul>
         <li><Link to="Login">Login</Link></li>
