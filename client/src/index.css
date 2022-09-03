@@ -16,35 +16,3 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-.loginCard {
-  display: flex;
-  justify-content: center;
-  background-color: aliceblue;
-  align-items: center;
-  opacity: .8; 
-  border-radius: 5px;
-  width: 30%;
-  height: 200px;
-
-}
-
-.row {
-  padding-top: 200px;
-  display: flex;
-  justify-content: center;
-}
-
-.subBTN {
-  background-color: #022c43;
-  color: palevioletred;
-  border-radius: 3.5px;
-
-}
-
-.button-container {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-}
