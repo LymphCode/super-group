@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 // import AuthForm from './pages/Auth';
+import Home from './pages/Home'
 import Login from './pages/login'
 import Register from './pages/register-form'
 import { Routes, Route } from 'react-router-dom';

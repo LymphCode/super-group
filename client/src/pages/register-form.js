@@ -1,40 +1,31 @@
-import React from 'react';
+import { useState } from 'react';
+import ReactDOM from 'react';
 
-export default class Register extends React.Component {
-  state = {
-    username: '',
-    email: '',
-    password: '',
+function Register() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
   }
+  
+  const renderPage = (
+    <div>
+      <h1>Registration</h1>
+      <form onSubmit={handleSubmit}>
+        <div className='input-container'>
+          <label>Email</label>
+          <input type="text" name='email' required />
+        </div>
+        <div className='input-container'>
+          <label>Password</label>
+          <input type='password' name='pass' required />
+        </div>
+        <div className='button-container'>
+          <button type='submit'>Submit</button>
+        </div>
+      </form>
+    </div>
+  );
 
-  onChange = (e) => {
-    const value = e.target.checked ? e.target.value : e.target.checked;
-    this.setState({
-      [e.target.name]: value
-    })
-  }
-
-  render() {
-    return (
-      <div>
-        <h1>Registration</h1>
-        <form>
-          <input
-            name= 'username'
-            placeholder='username'
-            onchange={e => this.onChange(e)}/>
-          <input
-            name= 'email'
-            placeholder='Enter your email address'
-            type= 'email'
-            value= {e => this.onChange(e)}/>
-          <input
-            name= 'password'
-            placeholder= 'Enter a password'
-            type= 'password'
-            value= {e => this.onChange(e)}/>
-        </form>
-      </div>
-    )
-  }
+  return renderPage
 }
+
+export default Register
