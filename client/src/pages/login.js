@@ -1,7 +1,9 @@
 import { useState } from 'react';
-import ReactDOM from 'react';
+import { useMutation } from '@apollo/client';
+import { useNavigate } from 'react-router-dom';
+import {ADD_USER, LOGIN_USER} from '../utils/mutations'
 
-function Login() {
+function Login(props) {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -10,13 +12,37 @@ function Login() {
       <div className='error'>{errorMessages.message}</div>
     );
   }
+  const [formInput, setFormInput] = useState({
+    email: '',
+    password: '',
+    type: 'login'
+  });
+
+  const [loginUser] = useMutation(LOGIN_USER, {
+    variables: formInput
+  });
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    let user, token;
+    let mutation = loginUser
+      const { data } = await mutation();
+
+      user = data[loginUser].user;
+      token = data[loginUser].token;
+
+      localStorage.setItem('token', token);
+      props.setUser(user);
+    //  navigate('/main')
+  }
 
   const renderPage = (
     <div className='form loginCard'>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className='input-container'>
           <label>Email: </label>
-          <input type="text" name='email' required />
+          <input type="email" name='email' required />
         </div>
         <div className='input-container'>
           <label>Password: </label>
@@ -29,9 +55,6 @@ function Login() {
     </div>
   );
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-  }
 
   return renderPage
 }

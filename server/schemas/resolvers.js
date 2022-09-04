@@ -16,7 +16,7 @@ const resolvers = {
             }
         },
 
-        async loginUser(_, {email, password }, context) {
+        async addUser(_, {email, password }, context) {
             try {
                 const user = await User.create({email, password});
 

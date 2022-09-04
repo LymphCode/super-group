@@ -7,11 +7,13 @@ import { Routes, Route } from 'react-router-dom';
 
 
 function App() {
+  const [user, setUser] = useState(null);
+
   return (
     <div className='row'>
       <Routes>
           <Route exact path="/register" element={<Register />} />
-          <Route exact path="/" element={<Login />} />
+          <Route exact path="/" element={<Login setUser={setUser} />} />
           {/* <Route exact path="/auth" render={props => <Auth {...props} />} /> */}
       </Routes>
     </div>
