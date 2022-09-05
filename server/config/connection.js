@@ -1,5 +1,5 @@
 const mongoose =  require('mongoose');
-const URL = process.env.ATLAS_CONNECT_URL ? process.env.ATLAS_CONNECT_URL : 'mongodb+srv://jonahlindsley:<password1234>@cluster0.g5pi4fj.mongodb.net/?retryWrites=true&w=majority'
+const URL = process.env.ATLAS_CONNECT_URL ? process.env.ATLAS_CONNECT_URL : 'mongodb://localhost:27017/super-group'
 
 mongoose.connect(URL);
 

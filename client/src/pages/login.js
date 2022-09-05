@@ -3,7 +3,6 @@ import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import {ADD_USER, LOGIN_USER} from '../utils/mutations'
 
-<<<<<<< HEAD
 function Login(props) {
   const [errorMessages, setErrorMessages] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -12,11 +11,6 @@ function Login(props) {
     name === errorMessages.name && (
       <div className='error'>{errorMessages.message}</div>
     );
-=======
-function Login() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
->>>>>>> 906f10e4c453bc49fbe79af2a7e8ac2f092438bb
   }
   const [formInput, setFormInput] = useState({
     email: '',
@@ -44,20 +38,11 @@ function Login() {
   }
 
   const renderPage = (
-<<<<<<< HEAD
     <div className='form loginCard'>
       <form onSubmit={handleSubmit}>
         <div className='input-container'>
           <label>Email: </label>
           <input type="email" name='email' required />
-=======
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div className='input-container'>
-          <label>Email</label>
-          <input type="text" name='email' required />
->>>>>>> 906f10e4c453bc49fbe79af2a7e8ac2f092438bb
         </div>
         <div className='input-container'>
           <label>Password</label>
@@ -70,10 +55,6 @@ function Login() {
     </div>
   );
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 906f10e4c453bc49fbe79af2a7e8ac2f092438bb
   return renderPage
 }
 
