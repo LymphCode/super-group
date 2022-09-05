@@ -4,14 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import {ADD_USER, LOGIN_USER} from '../utils/mutations'
 
 function Login(props) {
-  const [errorMessages, setErrorMessages] = useState({});
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const renderErrMessage = (name) => {
-    name === errorMessages.name && (
-      <div className='error'>{errorMessages.message}</div>
-    );
-  }
   const [formInput, setFormInput] = useState({
     email: '',
     password: '',
@@ -38,11 +31,12 @@ function Login(props) {
   }
 
   const renderPage = (
-    <div className='form loginCard'>
+    <div>
+      <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div className='input-container'>
-          <label>Email: </label>
-          <input type="email" name='email' required />
+          <label>Email</label>
+          <input type="text" name='email' required />
         </div>
         <div className='input-container'>
           <label>Password</label>

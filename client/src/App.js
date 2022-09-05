@@ -13,9 +13,9 @@ function App() {
   return (
     <div className='row'>
       <Routes>
-          <Route exact path="/register" element={<Register />} />
-          <Route exact path="/" element={<Login setUser={setUser} />} />
-          {/* <Route exact path="/auth" render={props => <Auth {...props} />} /> */}
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/register" element={<Register />} />
+        <Route exact path="/login" element={<Login />} />
       </Routes>
     </div>
   );
