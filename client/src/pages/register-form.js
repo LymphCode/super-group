@@ -11,6 +11,10 @@ function Register(props) {
     type: 'register'
   });
   
+  const [addUser] = useMutation(ADD_USER, {
+    variables: formInput
+  });
+
   const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
@@ -36,16 +40,13 @@ function Register(props) {
       [e.target.name]: e.target.value
     })
   }
-  const [addUser] = useMutation(ADD_USER, {
-    variables: formInput
-  });
 
 
 
 
 
   
-  const renderPage = (
+  return (
     <div>
       <h1>Registration</h1>
       <form onSubmit={handleSubmit}>
@@ -63,8 +64,6 @@ function Register(props) {
       </form>
     </div>
   );
-
-  return renderPage
 }
 
 export default Register
