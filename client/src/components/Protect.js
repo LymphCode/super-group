@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { isAuthenticated } from './auth';
+import { isAuthenticated } from '../utils/auth';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 function Protect(props) {

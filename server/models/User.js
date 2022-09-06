@@ -18,6 +18,7 @@ const userSchema = new Schema({
 userSchema.pre('save', async function () {
     const hashed_pass = await bcrypt.hash(this.password, 10);
     this.password = hashed_pass;
+    return this
 });
 
 userSchema.methods.validatePass = async function (unencryted_password) {
