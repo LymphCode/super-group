@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
-import {ADD_USER, LOGIN_USER} from '../utils/mutations'
+import { LOGIN_USER } from '../utils/mutations'
 
 function Login(props) {
 
@@ -19,6 +19,7 @@ function Login(props) {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
 
     let user, token;
     let mutation = loginUser
@@ -45,11 +46,11 @@ function Login(props) {
       <form onSubmit={handleSubmit}>
         <div className='input-container'>
           <label>Email</label>
-          <input value={formInput.email} type="text" name='email' required />
+          <input onChange={handleInputChange} value={formInput.email} type="text" name='email' required />
         </div>
         <div className='input-container'>
           <label>Password</label>
-          <input value={formInput.password} type='password' name='pass' required />
+          <input onChange={handleInputChange} value={formInput.password} type='password' name='password' required />
         </div>
         <div className='button-container'>
           <button type='submit'>Submit</button>
