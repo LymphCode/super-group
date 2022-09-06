@@ -11,6 +11,8 @@ function Login(props) {
     type: 'login'
   });
 
+  const navigate = useNavigate();
+
   const [loginUser] = useMutation(LOGIN_USER, {
     variables: formInput
   });
@@ -27,20 +29,27 @@ function Login(props) {
 
       localStorage.setItem('token', token);
       props.setUser(user);
-    //  navigate('/main')
+     navigate('/')
+  }
+  
+  const handleInputChange = (e) => {
+    setFormInput({
+      ...formInput,
+      [e.target.name]: e.target.value
+    })
   }
 
-  const renderPage = (
+  return (
     <div>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <div className='input-container'>
           <label>Email</label>
-          <input type="text" name='email' required />
+          <input value={formInput.email} type="text" name='email' required />
         </div>
         <div className='input-container'>
           <label>Password</label>
-          <input type='password' name='pass' required />
+          <input value={formInput.password} type='password' name='pass' required />
         </div>
         <div className='button-container'>
           <button type='submit'>Submit</button>
@@ -49,7 +58,7 @@ function Login(props) {
     </div>
   );
 
-  return renderPage
+  
 }
 
 export default Login
