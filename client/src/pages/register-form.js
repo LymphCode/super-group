@@ -69,7 +69,6 @@ return (
       </form>
     </div>
   );
-
 }
 
 export default Register
