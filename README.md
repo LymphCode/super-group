@@ -1,15 +1,26 @@
 # SUPER GROUP - Art Gallery  
+
+# Introduction 
+We built a full stack - MERN Stack a walk through art galery site and deployed it to Heroku at " ". This project has played a key role in our journey to becoming a full-stack web developers. It showcases collaborative skills and coding abilities, especially in the context of a scalable, user-focused MERN app. Project Requirements were to to create a MERN stack single-page application that works with real-world data to solve a real-world challenge, with a focus on user demand.
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 ## Table of Contents
 - [Description](#description)
+- [App Screenshot](#appscreenshot)
 - [Installation](#installation) 
 - [Usage](#usage)
-- [Test](#test) 
-- [Questions](#questions)
+- [Criteria](#criteria) 
+- [Author](#questions)
 
 ## Description
 
-This application is modifed to build a text editor that runs in the browser. The app is a single-page application that meets the PWA criteria. Additionally, it features a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application also functions offline.
+We are in a digital time period of time where arts can be acceceble on 
+
+
+
+## App Screenshot
+
+- !["Screenshot"]()
 
 ## Installation
 
@@ -28,13 +39,13 @@ Deployed on heroku website
 
 
 
-## Test
+## Criteria
 
 
 
 
 
-## Questions
+## Author
 
 
 
