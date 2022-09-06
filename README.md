@@ -1,7 +1,7 @@
-# SUPER GROUP - Art Gallery  
+# SUPER GROUP - WalkThrough 3D World 
 
 # Introduction 
-We built a full stack - MERN Stack a walk through art galery site and deployed it to Heroku at " ". This project has played a key role in our journey to becoming a full-stack web developers. It showcases collaborative skills and coding abilities, especially in the context of a scalable, user-focused MERN app. Project Requirements were to to create a MERN stack single-page application that works with real-world data to solve a real-world challenge, with a focus on user demand.
+We built a full stack - MERN Stack a walk through 3D site and deployed it to Heroku at " ". This project has played a key role in our journey to becoming a full-stack web developers. It showcases collaborative skills and coding abilities, especially in the context of a scalable, user-focused MERN app. Project Requirements were to to create a MERN stack single-page application that works with real-world data to solve a real-world challenge, with a focus on user demand.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
 ## Table of Contents
@@ -14,7 +14,8 @@ We built a full stack - MERN Stack a walk through art galery site and deployed i
 
 ## Description
 
-We are in a digital time period of time where arts can be acceceble on 
+
+
 
 
 
