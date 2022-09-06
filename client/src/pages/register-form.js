@@ -32,7 +32,7 @@ function Register(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     console.log('tokentest')
-    console.log( addUser())
+    console.log( await addUser())
 
     let user, token;
     // let mutation = addUser
