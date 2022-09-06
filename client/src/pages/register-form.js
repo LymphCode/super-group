@@ -1,4 +1,4 @@
-import { useState, ReactDOM } from 'react';
+import { useState } from 'react';
 import {ADD_USER } from '../utils/mutations'
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
@@ -10,22 +10,12 @@ function Register(props) {
     password: '',
     type: 'register'
   });
-
-
-  const handleInputChange = (e) => {
-    console.log(formInput)
-    setFormInput({
-      ...formInput,
-      [e.target.name]: e.target.value
-    })
-  }
-  const [addUser] = useMutation(ADD_USER, {
-    variables: formInput
-  });
+  
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('sumbited')
+    console.log('submitted')
     
     let user, token;
     let mutation = addUser
@@ -39,10 +29,21 @@ function Register(props) {
      navigate('/')
   }
 
+  const handleInputChange = (e) => {
+    console.log(formInput)
+    setFormInput({
+      ...formInput,
+      [e.target.name]: e.target.value
+    })
+  }
+  const [addUser] = useMutation(ADD_USER, {
+    variables: formInput
+  });
 
 
 
-  const navigate = useNavigate();
+
+
   
   const renderPage = (
     <div>
