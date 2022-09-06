@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-// import AuthForm from './pages/Auth';
+// import AuthForm from './utils/auth';
 import Home from './pages/Home'
 import Login from './pages/login'
 import Register from './pages/register-form'
@@ -14,6 +14,12 @@ function App() {
     const user_data = isAuthenticated();
 
     if(user_data) setUser(user_data)
+  }, []);
+
+  useEffect(() => {
+    const user_data = isAuthenticated();
+
+    if (user_data) setUser(user_data);
   }, []);
 
   return (

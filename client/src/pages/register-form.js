@@ -10,24 +10,12 @@ function Register(props) {
     password: '',
     type: 'register'
   });
-  
-  const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log('submitted')
-    
-    let user, token;
-    let mutation = addUser
-      const { data } = await mutation();
-
-      user = data[addUser].user;
-      token = data[addUser].token;
-
-      localStorage.setItem('token', token);
-      props.setUser(user);
-     navigate('/')
-  }
+  const [addUser] = useMutation(ADD_USER, {
+    email:  formInput.email,
+    password:  formInput.password,
+    type: 'register'
+  });
 
   const handleInputChange = (e) => {
     console.log(formInput)
@@ -36,16 +24,34 @@ function Register(props) {
       [e.target.name]: e.target.value
     })
   }
-  const [addUser] = useMutation(ADD_USER, {
-    variables: formInput
-  });
+
+
+  const navigate = useNavigate();
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log('tokentest')
+    console.log( await addUser())
+
+    let user, token;
+    // let mutation = addUser
+
+    console.log('token11')
+    const { data } = await addUser();
+    console.log('token222')
+    user = data['addUser'].user;
+    token = data['addUser'].token;
+    console.log(user)
+    localStorage.setItem('token', token);
+    props.setUser(user);
+    navigate('/')
+  }
 
 
 
 
-
-  
-  const renderPage = (
+return (
     <div>
       <h1>Registration</h1>
       <form onSubmit={handleSubmit}>
@@ -64,7 +70,6 @@ function Register(props) {
     </div>
   );
 
-  return renderPage
 }
 
 export default Register
