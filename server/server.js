@@ -1,21 +1,21 @@
 const express = require('express');
 const path = require('path');
-const { typedefs, resolvers } = require('./schemas');
+const { typeDefs, resolvers } = require('./schemas');
 const { ApolloServer } = require('apollo-server-express');
 const db = require('./config/connection');
 const PORT = process.env.PORT || 3333;
-var fs = require('fs');
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-var multer = require('multer');
 const app = express();
+const { authMiddleware } = require('./auth');
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-async function startServer(typedefs, resolvers) {
+async function startServer(typeDefs, resolvers) {
     const server = new ApolloServer({
-        typedefs,
-        resolvers
+        typeDefs,
+        resolvers,
+        context: (authMiddleware)
     });
 
     await server.start();
@@ -31,4 +31,4 @@ async function startServer(typedefs, resolvers) {
 }
 
 
-startServer(typedefs, resolvers);
+startServer(typeDefs, resolvers);

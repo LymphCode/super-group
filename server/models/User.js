@@ -1,5 +1,7 @@
-const {Schema, model, SchemaTypes} = require('mongoose')
+const { Schema, model, SchemaTypes } = require('mongoose');
 const bcrypt = require('bcrypt');
+
+
 const userSchema = new Schema({
     email: {
         type: String,
@@ -24,6 +26,6 @@ userSchema.methods.validatePass = async function (unencryted_password) {
     return valid_pass;
 }
 
-const User = model('user', userSchema);
+const User = model('User', userSchema);
 
 module.exports = User;
