@@ -4,6 +4,10 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.6.9",
+<<<<<<< HEAD
+=======
+    "@react-three/cannon": "^6.4.0",
+>>>>>>> eebc6ca6c0a67e5a7728b019f6dfe841ca7ecc66
     "@react-three/drei": "^9.28.2",
     "@react-three/fiber": "^8.7.2",
     "@testing-library/jest-dom": "^5.16.5",
@@ -12,12 +16,21 @@
     "graphql": "^16.6.0",
     "jwt-decode": "^3.1.2",
     "mongodb": "^4.9.1",
+    "nanoid": "^4.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-merge-refs": "^2.0.1",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+<<<<<<< HEAD
     "three": "^0.144.0",
     "web-vitals": "^2.1.4"
+=======
+    "react-spring": "^9.5.2",
+    "three": "^0.144.0",
+    "web-vitals": "^2.1.4",
+    "zustand": "^4.1.1"
+>>>>>>> eebc6ca6c0a67e5a7728b019f6dfe841ca7ecc66
   },
   "scripts": {
     "start": "react-scripts start",

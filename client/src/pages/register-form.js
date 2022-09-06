@@ -10,28 +10,12 @@ function Register(props) {
     password: '',
     type: 'register'
   });
-  
+
   const [addUser] = useMutation(ADD_USER, {
-    variables: formInput
+    email:  formInput.email,
+    password:  formInput.password,
+    type: 'register'
   });
-
-  const navigate = useNavigate();
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log('submitted')
-    
-    let user, token;
-    let mutation = addUser
-      const { data } = await mutation();
-
-      user = data[addUser].user;
-      token = data[addUser].token;
-
-      localStorage.setItem('token', token);
-      props.setUser(user);
-     navigate('/')
-  }
 
   const handleInputChange = (e) => {
     console.log(formInput)
@@ -42,11 +26,32 @@ function Register(props) {
   }
 
 
+  const navigate = useNavigate();
+
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log('tokentest')
+    console.log( await addUser())
+
+    let user, token;
+    // let mutation = addUser
+
+    console.log('token11')
+    const { data } = await addUser();
+    console.log('token222')
+    user = data['addUser'].user;
+    token = data['addUser'].token;
+    console.log(user)
+    localStorage.setItem('token', token);
+    props.setUser(user);
+    navigate('/')
+  }
 
 
 
-  
-  return (
+
+return (
     <div>
       <h1>Registration</h1>
       <form onSubmit={handleSubmit}>
