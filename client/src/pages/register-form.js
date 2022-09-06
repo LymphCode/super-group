@@ -1,73 +1,60 @@
-import ReactDOM from 'react';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState, ReactDOM } from 'react';
+import {ADD_USER } from '../utils/mutations'
 import { useMutation } from '@apollo/client';
-import { ADD_USER, LOGIN_USER } from '../utils/mutations'
+import { useNavigate } from 'react-router-dom';
 
 function Register(props) {
+
   const [formInput, setFormInput] = useState({
     email: '',
     password: '',
-    type: 'login'
+    type: 'register'
   });
 
-  const [addUser] = useMutation(ADD_USER, {
-    variables: formInput
-  });
-  const [loginUser] = useMutation(LOGIN_USER, {
-    variables: formInput
-  });
-
-  const navigate = useNavigate();
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
-    let user, token;
-    let mutation = formInput.type === 'register' ? addUser : loginUser;
-    let type = formInput.type === 'register' ? 'addUser' : 'loginUser';
-
-    const { data } = await mutation();
-
-    user = data[type].user;
-    token = data[type].token;
-
-    localStorage.setItem('token', token);
-    props.setUser(user);
-
-    navigate('/');
-  }
 
   const handleInputChange = (e) => {
+    console.log(formInput)
     setFormInput({
       ...formInput,
       [e.target.name]: e.target.value
     })
   }
+  const [addUser] = useMutation(ADD_USER, {
+    variables: formInput
+  });
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log('sumbited')
+    
+    let user, token;
+    let mutation = addUser
+      const { data } = await mutation();
+
+      user = data[addUser].user;
+      token = data[addUser].token;
+
+      localStorage.setItem('token', token);
+      props.setUser(user);
+     navigate('/')
+  }
+
+
+
+
+  const navigate = useNavigate();
+  
   const renderPage = (
     <div>
       <h1>Registration</h1>
       <form onSubmit={handleSubmit}>
         <div className='input-container'>
           <label>Email</label>
-          <input
-            type="email"
-            name='email'
-            placeholder='Enter your email'
-            value={formInput.email}
-            onChange={handleInputChange}
-            required />
+          <input onChange={handleInputChange} value={formInput.email} type="text" name='email' required />
         </div>
         <div className='input-container'>
           <label>Password</label>
-          <input
-            type='password'
-            name='password'
-            placeholder='Enter a password'
-            value={formInput.password}
-            onChange={handleInputChange}
-            required />
+          <input onChange={handleInputChange} value={formInput.password} type='password' name='password' required />
         </div>
         <div className='button-container'>
           <button type='submit'>Submit</button>
