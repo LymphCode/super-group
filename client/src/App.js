@@ -32,7 +32,7 @@ function App() {
         <Route exact path='/World' element={<Protect>
           <World />
         </Protect>} />
-    </Routes>
+      </Routes>
     </div >
   );
 }

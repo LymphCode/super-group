@@ -9,10 +9,10 @@ function Protect(props) {
     useEffect(() => {
         // we need to add the route for the art section in the match and redirect if theyre not verified
         if (!isAuthenticated() && location.pathname.match())
-        navigate('/world');
+        navigate('/');
 
         if (isAuthenticated() && (location.pathname.match()))
-        navigate('/')
+        navigate('/world')
     }, []);
 
     return (
