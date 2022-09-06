@@ -9,7 +9,7 @@ import { Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className='row'>
+    <div>
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/register" element={<Register />} />

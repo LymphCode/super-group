@@ -1,6 +1,6 @@
 const {Schema, model, SchemaTypes} = require('mongoose')
 const bcrypt = require('bcrypt');
-const userSchema = new schema({
+const userSchema = new Schema({
     email: {
         type: String,
         required: [true, 'you must input your email address'],
@@ -16,6 +16,7 @@ const userSchema = new schema({
 userSchema.pre('save', async function () {
     const hashed_pass = await bcrypt.hash(this.password, 10);
     this.password = hashed_pass;
+    return this
 });
 
 userSchema.methods.validatePass = async function (unencryted_password) {
