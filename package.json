@@ -209,10 +209,12 @@
     "dev:server": "cd ./server && nodemon server.js",
     "dev:client": "cd ./client && npm start",
     "start": "cd ./server && npm start",
+    "build": "react-scripts build",
     "dev": "concurrently \"npm run dev:server\"  \"npm run dev:client\"",
     "seed:todos": "cd ./server/seeds && node todo.js",
     "install:client": "cd ./client && npm i",
-    "install:server": "cd ./server && npm i"
+    "install:server": "cd ./server && npm i",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
