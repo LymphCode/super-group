@@ -1,4 +1,4 @@
-const { User } = require('../models/User')
+const User = require('../models/User')
 const { signToken } = require('../auth');
 const { ApolloError } = require('apollo-server-express');
 
@@ -13,9 +13,10 @@ const resolvers = {
     
     Mutation: {
         async addUser(_, { email, password }, context) {
+            console.log('triggered')
             try {
                 const user = await User.create({ email, password });
-                const token = await signToken(user);
+                const token = signToken(user);
                 return {user, token};
             } catch (err) {
                 throw new ApolloError(err);
