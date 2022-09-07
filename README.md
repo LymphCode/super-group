@@ -4,7 +4,7 @@
 
 ## Introduction
 
-We built a MERN Stack walkthrough 3D app and deployed it to Heroku. This project has played a key role in our journey to becoming a full-stack web developers. It showcases collaborative skills and coding abilities, especially in the context of a scalable, user-focused MERN app.
+We built a MERN Stack walkthrough 3D app and deployed it to Heroku. This project has played a key role in our journey to becoming a full-stack web developers. It showcases collaborative skills and coding abilities, especially in the context of a scalable, user-focused MERN app. In future development we hope to integrate art for purchase and several open world activities such as basketball, tennis etc.
 
 ## Table of Contents
 - [Description](#description)
