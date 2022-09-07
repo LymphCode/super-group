@@ -4,7 +4,7 @@ import { OrbitControls, Stars } from "@react-three/drei";
 import "../components/css/reactThree.css";
 
 function World() {
-    createRoot(document.getElementById('root')).render(
+    createRoot(document.getElementById('root2')).render(
         <Canvas>
             <OrbitControls />
             <Stars />
