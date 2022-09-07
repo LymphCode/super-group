@@ -24,14 +24,9 @@ A 3D art gallery made using three.js where you can control an avatar around the 
 
 ## Installation
 
-- npm install express
-- npm install --save-dev webpack
-- npm install webpack-dev-server
-- npm install --save-dev webpack-pwa-manifest
-- npm install babel
-- npm install
-- npm install concurrently
-n- pm npm install idb
+npm install from main file
+cd into client and run npm install
+cd into server and run npm install
 
 ## Usage
 React, three.js, javascript.
