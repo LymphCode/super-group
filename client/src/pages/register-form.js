@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import {ADD_USER } from '../utils/mutations'
+import { ADD_USER } from '../utils/mutations'
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 function Register(props) {
-  const [addUser, { data, loading, error }] = useMutation(ADD_USER);
+ 
   if (loading) {console.log('Submitting...') }
   if (error) console.log(`Submission error! ${error.message}`);
   if (data) console.log(`Submission error! partyyyy!`);
@@ -12,13 +12,12 @@ function Register(props) {
   const [formInput, setFormInput] = useState({
     email: '',
     password: '',
-    type: 'register'
   });
 
-//   const [addUser] = useMutation(ADD_USER, {
-//  variables: { email: formInput.email,
-//   password: formInput.password,}
-//   });
+  const [addUser, { error, data }] = useMutation(ADD_USER, {
+    email: formInput.email,
+    password: formInput.password,
+  });
 
   const handleInputChange = (e) => {
     console.log(formInput)
@@ -38,23 +37,23 @@ function Register(props) {
     // console.log(addUser())
 
     let user, token;
-    // let mutation = addUser
     console.log('token11')
-    const { data } = await addUser({variables: { email: formInput.email,
-      password: formInput.password,}});
-    console.log('token222')
-    // user = data['addUser'].user;
-    // token = data['addUser'].token;
-    console.log(user)
-    localStorage.setItem('token', token);
-    props.setUser(user);
-    navigate('/')
-  }
+    try {
+      const { data } = await addUser({
+        variables: { ...formInput }
+      });
+      console.log('token222')
+      user = data.addUser.user;
+      token = data.addUser.token;
+      console.log(token)
+      console.log(user)
+      localStorage.setItem('token', token);
+      props.setUser(user);
+      navigate('/world')
+    } catch(err) {console.error(err)}
+}
 
-
-
-
-return (
+  return (
     <div>
       <h1>Registration</h1>
       <form onSubmit={handleSubmit}>
