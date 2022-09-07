@@ -4,10 +4,32 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
-import { ApolloClient, ApolloProvider, InMemoryCache } from '@apollo/client';
-
+import { ApolloClient, InMemoryCache, ApolloProvider, createHttpLink, ApolloLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
+import { onError } from '@apollo/client/link/error';
+const errorLink = onError(({ graphQLErrors, networkError }) => {
+  if (graphQLErrors)
+    graphQLErrors.forEach(({ message, locations, path }) =>
+      console.log(
+        `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`
+      )
+    );
+  if (networkError) console.log(`[Network error]: ${networkError}`);
+});
+const http_link = createHttpLink({
+  uri: '/graphql'
+});
+const auth_link = setContext((_, { headers }) => {
+  const token = localStorage.getItem('token');
+  return {
+    headers: {
+      ...headers,
+      authorzation: token ? `Hacker ${token}` : ''
+    }
+  }
+});
 const client = new ApolloClient({
-  // link: ApolloLink.from([errorLink, authLink.concat(httpLink)]),
+  link: ApolloLink.from([errorLink, auth_link.concat(http_link)]),
   cache: new InMemoryCache()
 });
 
