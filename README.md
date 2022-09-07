@@ -29,7 +29,7 @@ cd into client and run npm install,
 cd into server and run npm install
 
 ## Technologies Used
-React, three.js, ApolloClient, react-three/cannon, react-three/drei, react-three/fiber.
+React, ApolloClient, react-three/cannon, react-three/drei, react-three/fiber.
 
 ## Deployed App
 [Deployed Application](https://super-group-100.herokuapp.com/)
