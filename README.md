@@ -17,8 +17,6 @@ We built a full stack - MERN Stack a walk through 3D site and deployed it to Her
 
 
 
-
-
 ## App Screenshot
 
 - !["Screenshot"]()
@@ -45,8 +43,5 @@ Deployed on heroku website
 
 
 
-
 ## Author
-
-
 
