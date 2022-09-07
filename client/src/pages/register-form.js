@@ -45,7 +45,7 @@ function Register(props) {
       console.log(user)
       localStorage.setItem('token', token);
       props.setUser(user);
-      navigate('/world')
+      navigate('/World')
     } catch(err) {console.error(err)}
 }
 
