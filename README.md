@@ -4,7 +4,7 @@
 
 ## Introduction
 
-We built a full stack - MERN Stack a walk through 3D site and deployed it to Heroku at " ". This project has played a key role in our journey to becoming a full-stack web developers. It showcases collaborative skills and coding abilities, especially in the context of a scalable, user-focused MERN app. Project Requirements were to to create a MERN stack single-page application that works with real-world data to solve a real-world challenge, with a focus on user demand.
+We built a MERN Stack walkthrough 3D app and deployed it to Heroku. This project has played a key role in our journey to becoming a full-stack web developers. It showcases collaborative skills and coding abilities, especially in the context of a scalable, user-focused MERN app. In future development we hope to integrate art for purchase and several open world activities such as basketball, tennis etc.
 
 ## Table of Contents
 - [Description](#description)
@@ -20,25 +20,19 @@ A 3D art gallery made using three.js where you can control an avatar around the 
 
 ## App Screenshot
 
-![Screenshot]()
+![Screenshot](https://github.com/LymphCode/super-group/blob/main/assets/screenshot/world-screenshot.png)
 
 ## Installation
 
-- npm install express
-- npm install --save-dev webpack
-- npm install webpack-dev-server
-- npm install --save-dev webpack-pwa-manifest
-- npm install babel
-- npm install
-- npm install concurrently
-n- pm npm install idb
+npm install from main file,
+cd into client and run npm install,
+cd into server and run npm install
 
-## Usage
-React, three.js, javascript.
-Deployed on heroku website
+## Technologies Used
+React, three.js, ApolloClient, react-three/cannon, react-three/drei, react-three/fiber.
 
-## Criteria
-pull makeup request
+## Deployed App
+[Deployed Application](https://super-group-100.herokuapp.com/)
 
-## Author
+## Authors
 Super-Group (Jonah, Eden, Nate, and Odin)
