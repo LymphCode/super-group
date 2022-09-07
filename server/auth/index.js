@@ -17,10 +17,10 @@ module.exports = {
         token = token.split(' ').pop().trim();
 
         try {
-            const { data } = jwt.decode(token, JWT_SECRET, {
+            const { data } = jwt.verify(token, JWT_SECRET, {
                 maxAge: '4h'
             });
-
+            console.log(req.user)
             req.user = data;
             return req;
          }catch (err) {
