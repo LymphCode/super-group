@@ -20,7 +20,7 @@ A 3D art gallery made using three.js where you can control an avatar around the 
 
 ## App Screenshot
 
-![Screenshot]()
+![Screenshot](https://github.com/LymphCode/super-group/blob/main/assets/screenshot/world-screenshot.png)
 
 ## Installation
 
