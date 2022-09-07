@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { isAuthenticated } from './auth';
+import { isAuthenticated } from '../utils/auth';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 function Protect(props) {
@@ -9,10 +9,10 @@ function Protect(props) {
     useEffect(() => {
         // we need to add the route for the art section in the match and redirect if theyre not verified
         if (!isAuthenticated() && location.pathname.match())
-        navigate('');
+        navigate('/');
 
         if (isAuthenticated() && (location.pathname.match()))
-        navigate('')
+        navigate('/world')
     }, []);
 
     return (

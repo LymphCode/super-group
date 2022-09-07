@@ -1,25 +1,46 @@
 import { useState, useEffect } from 'react';
-// import AuthForm from './pages/Auth';
+// import AuthForm from './utils/auth';
 import Home from './pages/Home'
 import Login from './pages/login'
 import Register from './pages/register-form'
 // import Cart from './pages/Cart'
 import { Routes, Route } from 'react-router-dom';
-// import {BsFillCartCheckFill} from 'react-icons/bs'
-// import { isAuthenticated } from './utils/auth';
+import Protect from './components/Protect';
+import { isAuthenticated } from './utils/auth';
+import World from './pages/reactThree'
 
 
 function App() {
-  return (
-    <div className='row'>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/register" element={<Register />} />
-        <Route exact path="/login" element={<Login />} />
-        {/* <Route exact path="/Cart" element={<Your_Cart />} /> */}
-      </Routes>
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    const user_data = isAuthenticated();
 
-    </div>
+    if (user_data) setUser(user_data)
+  }, []);
+
+  useEffect(() => {
+    const user_data = isAuthenticated();
+
+    if (user_data) setUser(user_data);
+  }, []);
+
+  return (
+    <div>
+      <Routes>
+        <Route exact path="/" element={<Protect>
+          <Home user={user} />
+        </Protect>} />
+        <Route exact path="/register" element={<Protect>
+          <Register setUser={setUser} />
+        </Protect>} />
+        <Route exact path="/login" element={<Protect>
+          <Login setUser={setUser} />
+        </Protect>} />
+        <Route exact path='/World' element={<Protect>
+          <World />
+        </Protect>} />
+      </Routes>
+    </div >
   );
 }
 
