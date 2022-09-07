@@ -6,12 +6,17 @@ type User {
     email: String!
 }
 
+type Auth {
+    token: ID!
+    user: User
+}
+
 type Query {
     getUser: [User]
   }
 
 type Mutation {
-    addUser(email: String!, password: String!): User
+    addUser(email: String!, password: String!): Auth
     loginUser(email: String!, password: String!): User
 }
 `;

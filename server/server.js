@@ -6,9 +6,9 @@ const db = require('./config/connection');
 const PORT = process.env.PORT || 3333;
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
-const app = express();
 const { authMiddleware } = require('./auth');
 
+const app = express();
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 async function startServer(typeDefs, resolvers) {
