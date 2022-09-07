@@ -30,7 +30,7 @@ function Login(props) {
 
       localStorage.setItem('token', token);
       props.setUser(user);
-     navigate('/')
+     navigate('/world')
   }
   
   const handleInputChange = (e) => {

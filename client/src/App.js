@@ -6,6 +6,7 @@ import Register from './pages/register-form'
 import { Routes, Route } from 'react-router-dom';
 import Protect from './components/Protect';
 import { isAuthenticated } from './utils/auth';
+import World from './pages/reactThree'
 
 
 function App() {
@@ -13,7 +14,7 @@ function App() {
   useEffect(() => {
     const user_data = isAuthenticated();
 
-    if(user_data) setUser(user_data)
+    if (user_data) setUser(user_data)
   }, []);
 
   useEffect(() => {
@@ -34,8 +35,11 @@ function App() {
         <Route exact path="/login" element={<Protect>
           <Login setUser={setUser} />
         </Protect>} />
+        <Route exact path='/World' element={<Protect>
+          <World />
+        </Protect>} />
       </Routes>
-    </div>
+    </div >
   );
 }
 
