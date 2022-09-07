@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Home from './pages/Home'
 import Login from './pages/login'
 import Register from './pages/register-form'
+// import Cart from './pages/Cart'
 import { Routes, Route } from 'react-router-dom';
 import Protect from './components/Protect';
 import { isAuthenticated } from './utils/auth';
