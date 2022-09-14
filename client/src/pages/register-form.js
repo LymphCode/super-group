@@ -2,9 +2,13 @@ import { useState } from 'react';
 import { ADD_USER } from '../utils/mutations'
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
-
 function Register(props) {
-
+ 
+  if (loading) {console.log('Submitting...') }
+  if (error) console.log(`Submission error! ${error.message}`);
+  if (data) console.log(`Submission error! partyyyy!`);
+  
+  
   const [formInput, setFormInput] = useState({
     email: '',
     password: '',
